@@ -1,14 +1,60 @@
 .App {
+  border: 1px solid #dadde1;
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 600px;
+}
+.current-city {
+  border-radius: 15px;
   text-align: center;
 }
 
-.Search {
+.tempIcon {
+  width: 30%;
+}
+.temp-icon {
+  margin-bottom: 10px;
+  border-radius: 1px 60px;
+  background-color: #badafb59;
+  max-height: 80px;
+  max-width: 220px;
+  border: 1px;
+  box-shadow: 2px 2px rgba(119, 216, 240, 0.466), -0.5em 0 0.2em lavender;
+}
+.search-button,
+.locationButton {
+  border-radius: 20%;
+
+  right: 20px;
+}
+.locationButton {
+  max-width: 20px;
+}
+.search-button {
+  float: center;
+}
+
+.week-end {
+  display: block;
   margin: 0 auto;
-  max-width: 300px;
+  color: #17a2b8;
+  font-weight: 400;
+}
+a:hover {
+  cursor: copy;
 }
 
-.List {
-  margin-top: 15px;
-  list-style: none;
-  text-align: center;
+button:click {
+  color: #badafb59;
+}
+
+.float {
+  margin: 35px 0;
+}
+.header {
+  color: #17a2b8;
+}
+.letter-space {
+  word-spacing: 3px;
 }
