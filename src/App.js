@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 import './App.css';
+import Forecast from "./Forecast";
+import NextHours from "./NextHours";
+
 
 export default function App() {
 
@@ -13,7 +16,7 @@ export default function App() {
     let temperature = Math.round(response.data.main.temp);
     let wind = Math.round(response.data.wind.speed);
     let humidity = response.data.main.humidity;
-    let description = response.data.weather[0].description;
+    let description = response.data.weather[0].description.charAt(0).toUpperCase()+response.data.weather[0].description.slice(1);
 
     setLineOne(
     <div>
@@ -59,7 +62,7 @@ export default function App() {
   return (
    
 <div className="App">
-
+<div className="container">
  <div className="row ">
       <div className="col-4">
         <div className="card current-city">
@@ -100,42 +103,13 @@ export default function App() {
       </div>
       </div>
       {lineOne}
-      <div className="Forecast">
-      <h1 className="display-3 week-end">Next three days</h1>
-      <div className="row">
-        <div className="col-4">
-          <div className="card temp-icon">
-            <h3 className="temperatureValue">
-              19°
-              <img src="/" alt="weather icon" className="tempIcon" />{" "}
-            </h3>
-          </div>
-          <div className="letter-space">
-            date
-            <div>description</div>
-          </div>
-        </div>
-      </div>
-    </div>
-<div className="NextHours">
-      <h3 className="header">Next hours</h3>
-      <div className="row">
-        <div className="col-4">
-          <div className="temp-icon">
-            <h3>
-              temperature°{" "}
-              <img src="/" alt="weather icon" className="tempIcon" />
-            </h3>
-          </div>
-        </div>
-        <div className="col-4 float">date</div>
-        <div className="col-4 float">description</div>
-      </div>
-    </div>
+    
+<NextHours />
+    <Forecast />
       <footer>
       <a href="https://github.com/cav3ndish/weather-app" target="blank" > Open Source Code </a> 
   by Cav3ndish </footer> 
- 
+ </div>
    </div>
   
   );}
