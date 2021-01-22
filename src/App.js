@@ -3,7 +3,7 @@ import axios from "axios";
 import './App.css';
 import Forecast from "./Forecast";
 import NextHours from "./NextHours";
-
+import FormDate from "./FormDate";
 
 export default function App() {
 
@@ -13,10 +13,12 @@ export default function App() {
   let [lineOne, setLineOne] = useState(null);
 
   function showWeather(response) {
+    console.log(response.data);
     let temperature = Math.round(response.data.main.temp);
     let wind = Math.round(response.data.wind.speed);
     let humidity = response.data.main.humidity;
-    let description = response.data.weather[0].description.charAt(0).toUpperCase()+response.data.weather[0].description.slice(1);
+    let description = response.data.weather[0].description;
+    let todayDate =new Date(response.data.dt * 1000);
 
     setLineOne(
     <div>
@@ -34,11 +36,11 @@ export default function App() {
               </h3>
           </div>
         </div>
-        <div className="col-4"> today's date</div>
+        <div className="col-4"> <FormDate date={todayDate} /></div>
         <div className="col-4">
           <div>{humidity}%</div>
           <div>{wind} km/h</div>
-          <div>{description}</div>
+          <div className="text-capitalize">{description}</div>
         </div>
       </div>
     </div>
@@ -47,7 +49,7 @@ export default function App() {
   
   function showCity(event) {
     setCity(
-      event.target.value.charAt(0).toUpperCase() + event.target.value.slice(1)
+      event.target.value
     );}
 
   function tryAgain(){
@@ -67,7 +69,7 @@ export default function App() {
       <div className="col-4">
         <div className="card current-city">
           <div className="card-body ">
-            <h6 className="display-6  city"> {city} 🗺</h6>
+            <h6 className="display-6  city text-capitalize"> {city}</h6> 🗺
           </div>
         </div>
       </div>
@@ -87,16 +89,16 @@ export default function App() {
           onChange={showCity}
           placeholder="Enter a city"
         />
-        <input type="submit" className="btn btn-info" value="Submit" />
+        <input type="submit" className="btn btn-info w-50" value="Submit" />
       </form>
     </div>
       </div>
       <div className="col-2">
       <div>
-      <button type="button" className="btn btn-info">
+      <button type="button" className="btn btn-info w-60">
         C°
       </button>
-      <button type="button" className="btn btn-info">
+      <button type="button" className="btn btn-info w-60">
         F°
       </button>
     </div>

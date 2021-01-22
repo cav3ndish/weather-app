@@ -58,3 +58,7 @@ button:click {
 .letter-space {
   word-spacing: 3px;
 }
+
+.dateList{
+  list-style: none;
+}
