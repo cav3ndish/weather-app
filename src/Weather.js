@@ -39,18 +39,14 @@ if(currentData.ready) {
     
     return(
         <div className="row ">
-      <div className="col-4">
+      <div className="col-5">
         <div className="card current-city">
           <div className="card-body ">
             <h6 className="display-6  city text-capitalize"> {city}</h6> 🗺
           </div>
         </div>
       </div>
-      <div className="col-2">
-        <button type="button" className="btn btn-info">
-          My location
-        </button>
-      </div>
+      
       <div className="col-4">
       <div className="search-form">
       <form className="search-form Search" onSubmit={handleSubmit}>
@@ -66,7 +62,7 @@ if(currentData.ready) {
       </form>
     </div>
       </div>
-      <div className="col-2">
+      <div className="col-3">
     <div>
       <button type="button" className="btn btn-info w-60" >
         C°
