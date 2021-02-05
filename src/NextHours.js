@@ -27,7 +27,9 @@ if(retreive && props.city === forecast.city.name){
           
         <div>
             <h3>
-             {temp} °{" "}
+               {props.units === "celsius" 
+              ? temp : Math.round((temp*9)/5+32)}
+              °{" "}
              <img src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
               alt="icon" className="tempIcon"></img>
             </h3>
