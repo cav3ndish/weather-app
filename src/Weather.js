@@ -8,6 +8,7 @@ export default function Weather(props){
 
 let [currentData, setCurrentData] = useState({ready : false});
 let [city, setCity]= useState(props.originalCity);
+let [units, setUnits] = useState("celsius");
   
 
    function showWeather(response) {
@@ -33,7 +34,14 @@ function search()
   function showCity(event) {
     setCity( event.target.value );}
 
-   
+   function convertToCelsius(event) {
+     event.preventDefault();
+     setUnits("celsius");
+   }
+
+   function convertToFahrenheit(event){
+     event.preventDefault();
+    setUnits("imperial");   }
 
 if(currentData.ready) {
     
@@ -64,16 +72,16 @@ if(currentData.ready) {
       </div>
       <div className="col-3">
     <div>
-      <button type="button" className="btn btn-info w-60" >
+      <button type="button" onClick={convertToCelsius} className="btn btn-info w-60" >
         C°
       </button>
-      <button type="button" className="btn btn-info w-60"  >
+      <button type="button" onClick={convertToFahrenheit} className="btn btn-info w-60"  >
         F°
       </button>
  </div>
       </div>
-     <CurrentWeather data={currentData} />
-<NextHours />
+     <CurrentWeather data={currentData} units={units} />
+<NextHours city={currentData.city} />
     <Forecast />
  </div>   );
 }

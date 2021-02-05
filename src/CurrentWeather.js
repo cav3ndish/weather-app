@@ -10,7 +10,8 @@ export default function CurrentWeather(props){
         <div className="col-4">
           <div className="temp-icon">
             <h3>
-              {props.data.temperature}°   <br /> 
+              {props.units === "celsius" 
+              ? props.data.temperature : Math.round((props.data.temperature*9)/5+32)}°   <br /> 
              <img src={`https://openweathermap.org/img/wn/${props.data.icon}@2x.png`}
               alt="icon" className="tempIcon"></img>
               </h3>
