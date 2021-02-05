@@ -81,8 +81,11 @@ if(currentData.ready) {
  </div>
       </div>
      <CurrentWeather data={currentData} units={units} />
-<NextHours city={currentData.city} />
+    
+      <NextHours city={currentData.city} />
+
     <Forecast />
+    
  </div>   );
 }
 else {

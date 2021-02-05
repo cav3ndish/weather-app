@@ -6,7 +6,7 @@ export default function CurrentWeather(props){
     return(
     <div className="CurrentWeather">
       <h3 className="header">Current weather</h3>
-      <div className="row">
+      <div className="row clearfix">
         <div className="col-4">
           <div className="temp-icon">
             <h3>
