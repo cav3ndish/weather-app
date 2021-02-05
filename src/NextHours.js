@@ -21,9 +21,10 @@ if(retreive && props.city === forecast.city.name){
       <div className="NextHours header">
       <h2 >Next hours</h2>
       <div className="row">
-        <div className="col-10">
-          <div className="temp-icon">
+        <div className="col-3">
            <div>{new Date(forecast.list[0].dt*1000).getHours()}:00</div>
+          <div className="temp-icon">
+          
         <div>
             <h3>
              {temp} °{" "}
@@ -31,10 +32,11 @@ if(retreive && props.city === forecast.city.name){
               alt="icon" className="tempIcon"></img>
             </h3>
         </div>
+        </div>
         <div className=" float" className="text-capitalize">{description}</div>
        
       </div>
-    </div>
+ 
     </div> 
     </div>
     );

@@ -40,8 +40,7 @@ return (<div>
     <ul className="dateList">
     <li>{currentDay}</li> 
     <li>
-     {month}   {date} </li>
-    <li> {year}</li>
+     {month}   {date}  {year}</li>
     <li>{hours}:{minutes}</li></ul>
     </div>
     );

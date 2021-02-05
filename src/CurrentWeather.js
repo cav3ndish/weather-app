@@ -17,11 +17,11 @@ export default function CurrentWeather(props){
               </h3>
           </div>
         </div>
-        <div className="col-4"> <FormDate date={props.data.todayDate} /></div>
+        <div className="col-4">Last updated on <FormDate date={props.data.todayDate} /></div>
         <div className="col-4">
-          <div>{props.data.humidity}%</div>
-          <div>{props.data.wind} km/h</div>
-          <div className="text-capitalize">{props.data.description}</div>
+          <div>Humidity: {props.data.humidity}%</div>
+          <div>Wind speed: {props.data.wind} km/h</div>
+          <div className="text-capitalize">Looks like: {props.data.description}</div>
         </div>
       </div>
     </div>
