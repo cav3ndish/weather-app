@@ -38,6 +38,7 @@ if(minutes<10){minutes=`0${minutes}`}
 
 return (<div>
     <ul className="dateList">
+      <li>Last updated on</li>
     <li>{currentDay}</li> 
     <li>
      {month}   {date}  {year}</li>

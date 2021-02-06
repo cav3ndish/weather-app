@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./App.css";
+import NextHoursStamp from "./NextHoursStamp";
 
 export default function NextHours(props){
 let [retreive, setRetreive] = useState(false);
