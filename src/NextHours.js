@@ -10,37 +10,19 @@ let [forecast,setForecast] = useState(null);
 function handleNextHours(response){
   setForecast(response.data); 
   setRetreive(true); 
- 
 }
 
 if(retreive && props.city === forecast.city.name){
    console.log(forecast); 
-  let temp =Math.round(forecast.list[0].main.temp);
-  let description = (forecast.list[0].weather[0].description);
-  let icon = (forecast.list[0].weather[0].icon);
+   
    return ( 
       <div className="NextHours header">
       <h2 >Next hours</h2>
       <div className="row">
-        <div className="col-3">
-           <div>{new Date(forecast.list[0].dt*1000).getHours()}:00</div>
-          <div className="temp-icon">
-          
-        <div>
-            <h3>
-               {props.units === "celsius" 
-              ? temp : Math.round((temp*9)/5+32)}
-              °{" "}
-             <img src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
-              alt="icon" className="tempIcon"></img>
-            </h3>
-        </div>
-        </div>
-        <div className=" float" className="text-capitalize">{description}</div>
-       
-      </div>
- 
-    </div> 
+       {forecast.list.slice(0, 5).map(function(forecastItem)
+       {return <NextHoursStamp  data={forecastItem}  />;})}
+    
+    </div>
     </div>
     );
  }
