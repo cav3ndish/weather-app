@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Forecast from "./Forecast";
+import ForecastDays from "./ForecastDays";
 import NextHours from "./NextHours";
 import CurrentWeather from "./CurrentWeather";
 import axios from "axios";
@@ -86,7 +86,7 @@ if(currentData.ready) {
     
       <NextHours city={currentData.city} units={units} />
 
-    <Forecast />
+    <ForecastDays city={currentData.city}/>
     
  </div>   );
 }
