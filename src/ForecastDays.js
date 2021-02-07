@@ -14,14 +14,23 @@ function handleForecastDays(response){
 
 if(load && props.city === forecastDays.city.name){
    console.log(forecastDays); 
-   
+
+
+ 
+
    return ( 
-    <div className="Forecast">
-      <h2 className="display-3 week-end">Next three days</h2>
+    <div className="Forecast ">
+      <h2 className=" header">Next three days</h2>
       <div className="row">
-    
-      for (let i = 4; i <= 20; i = i + 8)
-       {return <ForecastDaysStamp  data={forecasDays[i]}  />;}
+ 
+          
+
+ {forecastDays.list.slice( 4,28).map(function(forecastItem)
+   {return (<ForecastDaysStamp  data={forecastItem} /> )})
+  }
+        
+           
+     
     
     </div>
     </div>

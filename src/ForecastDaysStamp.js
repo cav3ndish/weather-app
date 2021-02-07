@@ -15,6 +15,8 @@ let currentDay = days[today.getDay()];
 
     return(
          <div className="col-4">
+             <div>{currentDay}</div>
+            <div>{new Date(props.data.dt*1000).getHours()}:00</div>
           <div className="card temp-icon">
             <h3 className="temperatureValue">
               {Math.round(props.data.main.temp)}°
@@ -23,7 +25,7 @@ let currentDay = days[today.getDay()];
             </h3>
           </div>
           <div className="letter-space">
-            <div>{currentDay}</div>
+            
             <div  className="text-capitalize">{props.data.weather[0].description}</div>
           </div>
         </div>
