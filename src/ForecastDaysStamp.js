@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function ForecastDaysStamp(props){
+    let today =  new Date(props.data.dt*1000);
     let days = [
 "Sunday",
 "Monday",
@@ -10,7 +11,10 @@ export default function ForecastDaysStamp(props){
 "Friday",
 "Saturday"
 ];
-let currentDay = days[(props.data.dt*1000).getDay()];
+let currentDay = days[today.getDay()];
+let tomorrow = null;
+  for (let i = 4; i <= 20; i = i + 8) {
+    tomorrow = props.data[i];
     return(
          <div className="col-4">
           <div className="card temp-icon">
@@ -21,9 +25,10 @@ let currentDay = days[(props.data.dt*1000).getDay()];
             </h3>
           </div>
           <div className="letter-space">
-            <div>{new Date(currentDay)}</div>
+            <div>{currentDay}</div>
             <div  className="text-capitalize">{props.data.weather[0].description}</div>
           </div>
         </div>
     );
+}
 }
