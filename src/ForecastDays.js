@@ -19,8 +19,9 @@ if(load && props.city === forecastDays.city.name){
     <div className="Forecast">
       <h2 className="display-3 week-end">Next three days</h2>
       <div className="row">
-       {forecastDays.list.slice(0, 5).map(function(forecastItem)
-       {return <ForecastDaysStamp  data={forecastItem}  />;})}
+    
+      for (let i = 4; i <= 20; i = i + 8)
+       {return <ForecastDaysStamp  data={forecasDays[i]}  />;}
     
     </div>
     </div>

@@ -12,9 +12,7 @@ export default function ForecastDaysStamp(props){
 "Saturday"
 ];
 let currentDay = days[today.getDay()];
-let tomorrow = null;
-  for (let i = 4; i <= 20; i = i + 8) {
-    tomorrow = props.data[i];
+
     return(
          <div className="col-4">
           <div className="card temp-icon">
@@ -30,5 +28,4 @@ let tomorrow = null;
           </div>
         </div>
     );
-}
 }
