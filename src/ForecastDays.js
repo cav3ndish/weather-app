@@ -23,11 +23,11 @@ if(load && props.city === forecastDays.city.name){
       <h2 className=" header">Next three days</h2>
       <div className="row">
  
-          
+        {forecastDays.list.filter((_,i) => i % 8 === 0 && i > 0).slice(0,3).map(function(forecastItem, index)  
 
- {forecastDays.list.slice( 4,28).map(function(forecastItem)
-   {return (<ForecastDaysStamp  data={forecastItem} /> )})
-  }
+ 
+   {return <ForecastDaysStamp key={index} data={forecastItem} /> ;})}
+  
         
            
      

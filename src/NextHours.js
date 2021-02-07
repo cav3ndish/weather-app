@@ -3,6 +3,7 @@ import axios from "axios";
 import "./App.css";
 import NextHoursStamp from "./NextHoursStamp";
 
+
 export default function NextHours(props){
 let [retreive, setRetreive] = useState(false);
 let [forecast,setForecast] = useState(null);
@@ -12,6 +13,8 @@ function handleNextHours(response){
   setRetreive(true); 
 }
 
+
+
 if(retreive && props.city === forecast.city.name){
    console.log(forecast); 
    
@@ -20,7 +23,7 @@ if(retreive && props.city === forecast.city.name){
       <h2 >Next hours</h2>
       <div className="row">
        {forecast.list.slice(0, 5).map(function(forecastItem)
-       {return <NextHoursStamp  data={forecastItem}  />;})}
+       {return <NextHoursStamp  data={forecastItem}   />;})}
     
     </div>
     </div>

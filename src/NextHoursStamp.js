@@ -8,8 +8,7 @@ export default function NextHoursStamp(props){
           <div className="temp-icon">
                   <div>
             <h3>
-              
-              
+                          
              {Math.round(props.data.main.temp)} °
              <img src={`https://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`}
               alt="icon" className="tempIcon"></img>
