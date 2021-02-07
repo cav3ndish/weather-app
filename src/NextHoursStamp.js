@@ -16,7 +16,7 @@ export default function NextHoursStamp(props){
             </h3>
         </div>
         </div>
-        <div className=" float" className="text-capitalize">{props.data.weather[0].description}</div>
+        <div className=" float text-capitalize">{props.data.weather[0].description}</div>
              </div>
              
     );
